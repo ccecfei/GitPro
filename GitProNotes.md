@@ -135,6 +135,31 @@
 
 移动文件（文件重命名）
 
+### git log 
+
+* 显示提交的log
+* -p 显示每次提交的diff
+* -n 显示最近n次提交
+* -stat 显示每次提交的简略统计信息
+* --pretty=format 以指定的格式显示，具体参考文档吧
+* 时间参数
+	* --after(since)='YYYY-MM-DD' 自某天以来
+	* --before(until)='YYYY-MM-DD' 到某天为止
+	* --after=2.weeks 最近两周
+	
+* --oneline 一条log显示在一行上
+* --graph
+	* git log --oneline --graph
+
+* 可以用grep对log进行搜索 
+
+
+### 作者&提交者
+
+* 作者：写此段代码的人，可以看作是workspace->staged阶段
+* 提交者：把修改并入仓库的人，staged->仓库
+
+
 
 
 
