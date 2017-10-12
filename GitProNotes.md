@@ -153,6 +153,19 @@
 
 * 可以用grep对log进行搜索 
 
+### 撤消 undo
+
+* git commit --amend -m "log"
+	* 追加提交
+	* 如果上次提交有文件漏add了，或者提交log需要修改
+
+* git reset HEAD <file>
+	* 撤消暂存区中，被多add的文件
+
+* git checkout -- <file>
+	* 注意空格
+	* 丢弃工作区且还没放到暂存区的修改，使文件回到未修改状态
+
 
 ### 作者&提交者
 
