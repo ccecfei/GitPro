@@ -176,30 +176,40 @@
 
 
 
+### 远程仓库操作
+
+* `git remote -v`
+	* 显示远程仓库
+
+* `git remot show [remotename]`
+	* 显示指定远程库的详细信息
+
+* `git remote add <shortname> <url>`
+	* 关联远程仓库url, 并将此关联用shortname作为简写，以后可以用shortname来引用
+	* add 的时候支持多种协议：
+		1. https
+			* `git remote add origin https://github.com/ccecfei/GitPro`
+			* 把github上的GitPro与本地关联，并且缩写名为origin
+		2. ssh协议
+			* `git remote add origin git@github.com:ccecfei/GitPro.git`
+			* 功能和上面一样，只不过协议用ssh
+
+* `git remote rename src_name dest_name`
+	
+	重命名src_name为dest_name
+
+* `git remote remove <shortname>`
+
+	删除和远程库的关联
+
+* `git push [remote-name] [branch-name]`
+
+	eg:`git push origin master`
 
 
-
-
-### git remote add <shortname> <url> 
-
-* 关联远程仓库
-* add 的时候支持多种协议：
-	1. https
-		* git remote add origin https://github.com/ccecfei/GitPro
-		* 把github上的GitPro与本地关联，并且缩写名为origin
-	2. ssh协议
-		* git remote add origin git@github.com:ccecfei/GitPro.git
-		* 功能和上面一样，只不过协议用ssh
-
-
-### git remote remove <shortname>
-
-删除和远程库的关联
-
-
-### git push [remote-name] [branch-name]
-
-eg:git push origin master
+* `git fetch <remotename>`与`git pull`的区别
+	*  `git fetch`拉取最新提交，并更新fetch_head
+	*  `git pull`做了fetch的工作后，还会多一步自动merge到当前分支
 
 
 
