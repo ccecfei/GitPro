@@ -472,7 +472,18 @@ from module import something as sth
 
 key有序的dict
 
+### itertools
 
+```python
+	# 把两个列表链起来就象迭代一个列表
+	for item in itertools.chain([1,2], [a,b])
+	
+	# 无穷循环迭代
+	for item in itertools.cycle([1,2]):
+
+```
+
+## pprint 打印出来的数据更方便阅读
 
 
 
