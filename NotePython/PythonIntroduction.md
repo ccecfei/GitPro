@@ -440,6 +440,39 @@ from module import something as sth
 
 ```
 
+## collections 库
+
+### defaultdict
+
+初始化时需要给它传一个参数，当key未命中时，则调用此函数，并把此函数的返回值赋值给dict[key]，最终返回这个key对应的value
+
+```python
+	from collections import defaultdict
+	week = defaultdict(int)
+	week['sunday'] = 7
+	week['monday'] # 未命中，调用int(),返回0
+
+```
+
+### Counter
+
+```python
+	from collections import Counter
+	breakfast = ['eggs', 'milk', 'eggs']
+	
+	breakfastCounter = Counter(breakfast) # 对一个list进行计数
+	# 返回的结果形式： Counter( {'milk':1, 'eggs':2} ) 
+
+	breakfastCounter.most_common()
+	# 按数量降序排列，返回值为：[('eggs', 2), ('milk', 1)]
+```
+
+
+### OrderedDict
+
+key有序的dict
+
+
 
 
 
