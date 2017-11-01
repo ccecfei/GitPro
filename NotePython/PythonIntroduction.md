@@ -406,13 +406,39 @@ Docstrings
 	
 	# 带as,可以获得这个异常对象
 	except exceptionType as name
+	
+	# 比如
+	try:
+		raise OopsException('memory leaked!')
+	except Exception as e:
+		print(e) # memory leaked! 会把抛出异常时所带的消息打出来
 
 ```
 
 编写自己的异常
-	1. 自己的异常都必须是Exception的子类
+
+1. 自己的异常都必须是Exception的子类
 
 
+## 模块
+
+命令行参数，用`sys.argv`来获取
+
+`sys.path` 表示模块搜索路径，其第一个值为空字符，指程序运行的当前目录
+
+### 导入模块
+
+模块名，就是python文件名
+
+模块导入的四种方式如下：
+
+```python
+import module
+import module as m
+from module import something
+from module import something as sth
+
+```
 
 
 
