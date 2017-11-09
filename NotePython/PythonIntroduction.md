@@ -483,13 +483,109 @@ key有序的dict
 
 ```
 
-## pprint 打印出来的数据更方便阅读
+### pprint 打印出来的数据更方便阅读
+
+## class 类
+
+### 新建一个对象的过程
+
+1. 为对象分配内存
+2. 调用对象的`__init__()`函数，把这个对象和其它参数一起传进去
+3. 返回这个新的对象
+
+### 父类
+
+`super()`用来取得父类对象
+
+如果子类定义了自己的`__init__()`，那么父类的`__init__()`不再被自动调用，和java一样
+
+成员函数的第一个参数是self，原因是：
+
+* `o.method()`实际上调用的是`Object.method(o)`
+
+### getter & setter
+
+两种实现：
+
+1. property()函数
+2. @property & @name.setter装饰器
+
+```python
+	class Duck():
+		def __init__(self, name):
+			self._name = name
+		def getName(self):
+			return self._name
+		def setName(self, name):
+			self._name = name
+		# property()有两个参数，getter&setter，在需要的时候自动调用对应的函数
+		name = property(getName, setName)
+	
+	# 第二种方法	
+	class Duck():
+		def __init__(self, name):
+			self._name = name
+		@property
+		def name(self):
+			return self._name
+		@name.setter
+		def name(self, name):
+			self._name = name	
+```
 
 
+### staticmethod & classmethod
+
+```python
+	# 成员函数
+	def func(self, otherParam):
+	
+	@staticmethod
+	def func():
+	
+	@classmethod
+	def func(cls)
+
+```
 
 
+### name mangling 名字修饰
+
+名字修饰：改变变量原有的命名
+
+python会对双下划线打头的变量进行name mangling,在前面加上“_classname”，例如`__origin` 变成 `_classname__origin`
 
 
+### 特殊方法，双下划线开头，双下划线结尾
+
+比较：
+
+```python
+	__eq__
+	__ne__
+	__lt__
+	__gt__
+	__le__
+	__ge__
+```
+
+算术运算：
+
+```python
+	__add__
+	__sub__
+	__mul__
+	__mod__
+	__pow__
+```
+
+定义如何打印这个object：
+
+`__str__()`： 被`str(), print()`调用
+
+`__repr__()`：被解释器调用，在交互模式下用来打印变量
+
+### namedtuple可以作为dict的key
 
 
 
