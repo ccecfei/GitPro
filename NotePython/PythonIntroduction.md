@@ -587,6 +587,64 @@ python会对双下划线打头的变量进行name mangling,在前面加上“_cl
 
 ### namedtuple可以作为dict的key
 
+### bytes() & bytearray()
+
+两个都是字符数组，bytes不可变，bytearray可变
+
+## I/O 
+
+### 文件读写
+
+`open(filename, mode)`,打开文件时，第二个参数mode，可以用两个字母来控制（如wb）
+
+* 第一个字母
+	* r 读
+	* w 写，如果文件不存，则创建；存在，则覆盖
+	* x 写，但仅当文件不存在时，才写
+	* a 追加，仅当文件存在时
+
+* 第二个字母
+	* t 文本
+	* b 二进制
+
+### read() & readline() & readlines()
+
+* read(size) 读指定大小的内容，默认读完整个文件
+* readline() 一次读一行
+* readlines() 读所有的行，以list的形式返回
+
+最简单的读文件方式：用迭代器，也就是利用for循环
+
+```python
+	for line in open('filename', 'rt'):
+		print line
+
+```
+
+其它相关函数：
+
+* tell() 当前位置
+* seek(offset, origin) 
+	* origin 有0、1、2三种取值
+
+### JSON 
+
+json.dumps(dataStruct)
+	
+* 将数据结构 编码为一个json字符串
+
+json.loads(jsonStr)
+
+* 将字符串解析为json数据结构
+
+### 序列化 使用pickle
+
+* pickle.dumps(object) 保存对象到文件
+* pickle.loads(pickleBinaryFormat) 把文件中的二进制对象载入到内存
+
+
+
+
 
 
 
